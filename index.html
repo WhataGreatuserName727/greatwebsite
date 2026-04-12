@@ -2,72 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Plink Cat Party</title>
+  <title>Plink Cat</title>
   <style>
-    body {
+    html, body {
       margin: 0;
-      overflow: hidden;
-      background: #111;
+      padding: 0;
+      height: 100%;
     }
 
-    .cat {
-      position: absolute;
-      width: 150px;
-      pointer-events: none;
-      user-select: none;
+    img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      display: block;
     }
   </style>
 </head>
 <body>
-
-<script>
-  const CAT_SRC = "https://media.tenor.com/8hZzGQkZz6sAAAAC/plink-cat.gif";
-  const NUM_CATS = 12;
-
-  const cats = [];
-
-  function createCat() {
-    const img = document.createElement("img");
-    img.src = CAT_SRC;
-    img.className = "cat";
-
-    const cat = {
-      el: img,
-      x: Math.random() * (window.innerWidth - 150),
-      y: Math.random() * (window.innerHeight - 150),
-      dx: (Math.random() * 4 + 2) * (Math.random() < 0.5 ? -1 : 1),
-      dy: (Math.random() * 4 + 2) * (Math.random() < 0.5 ? -1 : 1)
-    };
-
-    document.body.appendChild(img);
-    cats.push(cat);
-  }
-
-  function update() {
-    cats.forEach(cat => {
-      cat.x += cat.dx;
-      cat.y += cat.dy;
-
-      if (cat.x <= 0 || cat.x + 150 >= window.innerWidth) {
-        cat.dx *= -1;
-      }
-
-      if (cat.y <= 0 || cat.y + 150 >= window.innerHeight) {
-        cat.dy *= -1;
-      }
-
-      cat.el.style.transform = `translate(${cat.x}px, ${cat.y}px)`;
-    });
-
-    requestAnimationFrame(update);
-  }
-
-  for (let i = 0; i < NUM_CATS; i++) {
-    createCat();
-  }
-
-  update();
-</script>
-
+  <img src="https://media1.tenor.com/m/y1QFa-1vyKYAAAAd/plink-wide-cat.gif" alt="Plink Cat">
 </body>
 </html>
