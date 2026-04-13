@@ -5,20 +5,32 @@
   <title>Plink Cat</title>
   <style>
     html, body {
-      margin: 10;
-      padding: 10;
+      margin: 10px;
+      padding: 10px;
       height: 100%;
     }
 
-    img {
+    .background {
       width: 90vw;
       height: 90vh;
       object-fit: cover;
       display: block;
     }
+
+    .awkward-img {
+      position: absolute;
+      top: 37%;   /* awkward placement */
+      left: 63%;  /* not centered */
+      width: 180px; /* not too big */
+      opacity: 0.95;
+      box-shadow: 3px 3px 10px rgba(0,0,0,0.4);
+    }
   </style>
 </head>
 <body>
-  <img src="https://media1.tenor.com/m/y1QFa-1vyKYAAAAd/plink-wide-cat.gif" alt="Plink Cat">
+  <img class="background" src="https://media1.tenor.com/m/y1QFa-1vyKYAAAAd/plink-wide-cat.gif" alt="Plink Cat">
+
+  <!-- awkward floating placeholder image -->
+  <img class="awkward-img" src="qr.svg" alt="Placeholder">
 </body>
 </html>
